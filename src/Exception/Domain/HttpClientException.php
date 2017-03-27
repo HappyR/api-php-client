@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Happyr\ApiClient\Exception\Domain;
 
 use Happyr\ApiClient\Exception;
@@ -39,7 +38,7 @@ final class HttpClientException extends \RuntimeException implements Exception
                 $this->responseBody = json_decode($body, true);
 
                 if (isset($this->responseBody['error'])) {
-                    $this->message.= "\n".$this->responseBody['error']['message'];
+                    $this->message .= "\n".$this->responseBody['error']['message'];
                 }
             }
         }

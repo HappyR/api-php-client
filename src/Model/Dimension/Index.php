@@ -15,7 +15,6 @@ final class Index implements CreatableFromArray
     private $dimensions;
 
     /**
-     *
      * @param array $dimensions
      */
     private function __construct(array $dimensions)
@@ -40,6 +39,4 @@ final class Index implements CreatableFromArray
     {
         return $this->dimensions;
     }
-
-
 }

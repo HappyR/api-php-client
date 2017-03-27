@@ -30,7 +30,6 @@ final class Created implements CreatableFromArray
     private $language;
 
     /**
-     *
      * @param string $id
      * @param string $name
      * @param string $description
@@ -52,6 +51,7 @@ final class Created implements CreatableFromArray
     public static function createFromArray(array $data)
     {
         $data = $data['data'];
+
         return new self($data['id'], $data['name'], $data['description'], $data['language']);
     }
 
@@ -86,6 +86,4 @@ final class Created implements CreatableFromArray
     {
         return $this->language;
     }
-
-
 }
