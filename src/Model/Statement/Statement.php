@@ -9,6 +9,11 @@ use Happyr\ApiClient\Model\CreatableFromArray;
  */
 final class Statement implements CreatableFromArray
 {
+    const TYPE_STRING = 'string';
+    const TYPE_IMAGE = 'image';
+    const SECTION_PERSONALITY = 'personality';
+    const SECTION_INTELLIGENCE = 'intelligence';
+
     /**
      * @var string
      */
@@ -60,11 +65,15 @@ final class Statement implements CreatableFromArray
     /**
      * @param array $data
      *
-     * @return
+     * @return Statement|null
      */
     public static function createFromArray(array $data)
     {
         $data = $data['data'];
+        if (empty($data)) {
+            return null;
+        }
+
         $statement = new self($data['id']);
         $statement->setSentence($data['sentence']);
         $statement->setAssessments($data['assessments']);

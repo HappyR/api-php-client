@@ -10,7 +10,7 @@ use Happyr\ApiClient\Model\CreatableFromArray;
 final class Interview implements CreatableFromArray
 {
     /**
-     * @var array with keys as profile ids and each profile has a name, statements and questions.
+     * @var array with keys as profile ids and each profile has a name, statements and questions
      */
     private $profiles;
 
@@ -20,15 +20,14 @@ final class Interview implements CreatableFromArray
     private $description;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $complete;
 
     /**
-     *
-     * @param array $profiles
+     * @param array  $profiles
      * @param string $description
-     * @param bool $complete
+     * @param bool   $complete
      */
     private function __construct(array $profiles, $description, $complete)
     {
@@ -45,6 +44,20 @@ final class Interview implements CreatableFromArray
     public static function createFromArray(array $data)
     {
         return new self($data['data']['profiles'], $data['data']['description'], $data['data']['complete']);
+    }
+
+    /**
+     * This is allow legacy code use the interview object.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return [
+            'profiles' => $this->profiles,
+            'description' => $this->description,
+            'complete' => $this->complete,
+        ];
     }
 
     /**
@@ -70,6 +83,4 @@ final class Interview implements CreatableFromArray
     {
         return $this->complete;
     }
-
-
 }
