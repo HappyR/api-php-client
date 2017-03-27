@@ -1,6 +1,6 @@
 <?php
 
-namespace Happyr\ApiClient\Model\Dimension;
+namespace Happyr\ApiClient\Model\Match;
 
 use Happyr\ApiClient\Model\CreatableFromArray;
 
