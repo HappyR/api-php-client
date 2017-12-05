@@ -32,7 +32,7 @@ final class HttpClientException extends \RuntimeException implements Exception
         if ($response) {
             $this->response = $response;
             $body = $response->getBody()->__toString();
-            if (strpos($response->getHeaderLine('Content-Type'), 'application/json') !== 0) {
+            if (0 !== strpos($response->getHeaderLine('Content-Type'), 'application/json')) {
                 $this->responseBody['message'] = $body;
             } else {
                 $this->responseBody = json_decode($body, true);
