@@ -5,8 +5,9 @@ namespace Happyr\ApiClient\Test;
 use Happyr\ApiClient\HttpClientConfigurator;
 use Http\Client\Common\Plugin\HeaderAppendPlugin;
 use Nyholm\NSA;
+use PHPUnit\Framework\TestCase;
 
-final class HttpClientConfiguratorTest extends \PHPUnit_Framework_TestCase
+final class HttpClientConfiguratorTest extends TestCase
 {
     public function testAppendPlugin()
     {
