@@ -38,7 +38,7 @@ final class User implements CreatableFromArray
     {
         $data = $data['data'];
 
-        return new self(isset($data['name']) ? $data['name']: '', $data['email']);
+        return new self(isset($data['name']) ? $data['name'] : '', $data['email']);
     }
 
     /**
