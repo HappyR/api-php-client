@@ -10,8 +10,11 @@ use Happyr\ApiClient\Model\CreatableFromArray;
 final class Statement implements CreatableFromArray
 {
     const TYPE_STRING = 'string';
+
     const TYPE_IMAGE = 'image';
+
     const SECTION_PERSONALITY = 'personality';
+
     const SECTION_INTELLIGENCE = 'intelligence';
 
     /**
